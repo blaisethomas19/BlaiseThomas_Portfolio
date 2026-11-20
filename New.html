@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blaise Thomas | Financial Analyst — Mumbai, India</title>
+  <meta name="description" content="Executive portfolio of Blaise Thomas, Financial Analyst & MSc Finance (Distinction) graduate specializing in workflow automation, financial control, FinOps, and audit-ready reporting." />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js CDN for embedded executive mini-dashboards -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <!-- Tailwind Custom Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            navy: {
+              DEFAULT: '#0F2942',
+              light: '#1B3B5A',
+              dark: '#0A1C2E',
+            },
+            slate: {
+              900: '#0F172A',
+              600: '#475569',
+              200: '#E2E8F0',
+              50: '#F8FAFC',
+            },
+            emerald: {
+              600: '#059669',
+              50: '#ECFDF5',
+              100: '#D1FAE5',
+            },
+            teal: {
+              600: '#0D9488',
+            },
+          },
+          boxShadow: {
+            card: '0 1px 2px 0 rgba(15, 23, 42, 0.04)',
+            'card-hover': '0 12px 28px -8px rgba(15, 23, 42, 0.08), 0 4px 10px -4px rgba(15, 23, 42, 0.04)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Subtle consulting-grade architectural grid backdrop for Hero */
+    .bg-grid-subtle {
+      background-image:
+        linear-gradient(to right, rgba(226, 232, 240, 0.45) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Smooth scroll reveal utility */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Case study card filter animation */
+    .project-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-600 font-sans antialiased selection:bg-navy selection:text-white">
+
+  <!-- Toast Notification for Clipboard Copy -->
+  <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-navy text-white px-4 py-3 rounded-xl shadow-lg border border-white/10 text-sm font-medium opacity-0 pointer-events-none translate-y-3 transition-all duration-300">
+    <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+    <span id="toast-message">Email copied to clipboard</span>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- STICKY NAVIGATION BAR                                                 -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Brand / Name -->
+        <a href="#top" class="flex items-center gap-2.5 group">
+          <div class="w-8 h-8 rounded-lg bg-navy text-white flex items-center justify-center font-heading font-bold text-sm tracking-tight group-hover:bg-navy-light transition-colors">
+            BT
+          </div>
+          <div class="flex flex-col">
+            <span class="font-heading font-bold text-slate-900 text-sm sm:text-base leading-tight tracking-tight">Blaise Thomas</span>
+            <span class="text-[11px] font-mono text-slate-500 leading-tight hidden sm:block">FINANCIAL ANALYST</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600" aria-label="Primary Navigation">
+          <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
+          <a href="#skills" class="hover:text-slate-900 transition-colors">Skills</a>
+          <a href="#projects" class="hover:text-slate-900 transition-colors">Case Studies</a>
+          <a href="#experience" class="hover:text-slate-900 transition-colors">Experience</a>
+          <a href="#credentials" class="hover:text-slate-900 transition-colors">Credentials</a>
+          <a href="#contact" class="hover:text-slate-900 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Primary CTA + Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-navy hover:bg-navy-light text-white text-sm font-medium transition-colors shadow-sm">
+            Let’s Connect
+          </a>
+          <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu" aria-expanded="false" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-1 shadow-sm">
+      <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">About</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">Skills</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">Case Studies</a>
+      <a href="#experience" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">Experience</a>
+      <a href="#credentials" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">Credentials</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">Contact</a>
+      <div class="pt-2">
+        <a href="#contact" class="mobile-nav-link block w-full text-center px-4 py-2.5 rounded-lg bg-navy text-white text-sm font-medium">
+          Let’s Connect
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================================================================== -->
+    <!-- 1. HERO SECTION (ABOVE THE FOLD)                                      -->
+    <!-- ===================================================================== -->
+    <section class="relative overflow-hidden border-b border-slate-200">
+      <!-- Subtle grid background with radial fade -->
+      <div class="absolute inset-0 bg-grid-subtle [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_80%)] pointer-events-none"></div>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-16 sm:pt-20 sm:pb-24">
+        <div class="max-w-4xl">
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 mb-6 shadow-card">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span>Mumbai, India • Open to Relocate • Financial Analyst</span>
+          </div>
+
+          <!-- Positioning Headline -->
+          <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[3.25rem] text-slate-900 tracking-tight leading-[1.12] mb-6">
+            Turning Financial Complexity into <span class="text-navy">Automated Precision</span> &amp; Strategic Control
+          </h1>
+
+          <!-- Concise Subheadline -->
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mb-8">
+            Financial Analyst &amp; MSc Finance (Distinction) graduate with 4+ years of experience across corporate financial services and UK accountancy—specializing in workflow automation, financial control, and audit-ready reporting.
+          </p>
+
+          <!-- Primary & Secondary CTAs + LinkedIn -->
+          <div class="flex flex-wrap items-center gap-3.5 mb-14">
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-navy hover:bg-navy-light text-white font-medium text-sm sm:text-base transition-all shadow-sm hover:shadow">
+              <span>View Case Studies</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-900 font-medium text-sm sm:text-base border border-slate-200 transition-colors shadow-card">
+              Let’s Connect
+            </a>
+            <a href="https://www.linkedin.com/in/blaise-thomas-0586771bb/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-slate-600 hover:text-navy hover:bg-slate-50 font-medium text-sm sm:text-base transition-colors">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+              <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4-Column Executive KPI Strip -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 bg-slate-50 border border-slate-200 rounded-2xl divide-y lg:divide-y-0 lg:divide-x divide-slate-200 overflow-hidden shadow-card">
+          <div class="p-5 sm:p-6">
+            <div class="font-mono font-bold text-2xl sm:text-3xl text-navy tracking-tight mb-1">4+ Years</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium leading-snug">Corporate &amp; UK Accountancy Experience</div>
+          </div>
+          <div class="p-5 sm:p-6 border-l border-slate-200 lg:border-l-0">
+            <div class="font-mono font-bold text-2xl sm:text-3xl text-emerald-600 tracking-tight mb-1">70%</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium leading-snug">Manual Reconciliation Effort Eliminated</div>
+          </div>
+          <div class="p-5 sm:p-6">
+            <div class="font-mono font-bold text-2xl sm:text-3xl text-emerald-600 tracking-tight mb-1">99%</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium leading-snug">Data Integrity Across 60+ Portfolios</div>
+          </div>
+          <div class="p-5 sm:p-6 border-l border-slate-200 lg:border-l-0">
+            <div class="font-mono font-bold text-2xl sm:text-3xl text-navy tracking-tight mb-1">100%</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium leading-snug">On-Time HMRC &amp; Audit Compliance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 2. ABOUT ME SECTION                                                   -->
+    <!-- ===================================================================== -->
+    <section id="about" class="py-16 sm:py-24 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="mb-10">
+          <p class="font-mono text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">01 / Executive Profile</p>
+          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight">About Me</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <!-- Left Column: Concise Executive Summary -->
+          <div class="lg:col-span-7 space-y-5">
+            <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+              Results-driven Financial Analyst and Accounting Professional with 4+ years of experience across corporate financial services and UK professional accountancy. Proven track record in workflow automation, statutory compliance, audit readiness, and general ledger reconciliations, consistently maintaining a <span class="font-semibold text-slate-900">99% data integrity standard</span>.
+            </p>
+            <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+              Recipient of the <span class="font-semibold text-slate-900">‘Diamond of the Month’</span> award at Motilal Oswal for financial process automation that eliminated <span class="font-semibold text-emerald-600">70% of manual effort</span>. Certified FinOps Practitioner proficient in advanced Excel modeling, Tableau, Infor SunSystems, and process re-engineering.
+            </p>
+
+            <!-- Value Highlights Row -->
+            <div class="pt-3 flex flex-wrap gap-2.5">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/70 text-xs font-medium">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Diamond of the Month — Motilal Oswal
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 border border-slate-200 text-xs font-medium">
+                <svg class="w-3.5 h-3.5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                India &amp; UK Cross-Border Finance
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 border border-slate-200 text-xs font-medium">
+                <svg class="w-3.5 h-3.5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                Audit-Ready Process Automation
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Column: Quick Recruiter Snapshot Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-card">
+              <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
+                <h3 class="font-heading font-bold text-sm uppercase tracking-wider text-slate-900">Quick Recruiter Snapshot</h3>
+                <span class="font-mono text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium">Available</span>
+              </div>
+              <dl class="space-y-3.5 text-sm">
+                <div class="flex justify-between gap-4">
+                  <dt class="text-slate-500 shrink-0">Name</dt>
+                  <dd class="font-semibold text-slate-900 text-right">Blaise Thomas</dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt class="text-slate-500 shrink-0">Role</dt>
+                  <dd class="font-semibold text-slate-900 text-right">Financial Analyst</dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt class="text-slate-500 shrink-0">Location</dt>
+                  <dd class="font-medium text-slate-800 text-right">Mumbai, India (Open to Relocate)</dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt class="text-slate-500 shrink-0">Experience</dt>
+                  <dd class="font-mono font-semibold text-navy text-right">4+ Years</dd>
+                </div>
+                <div class="flex justify-between gap-4 pt-2 border-t border-slate-200/80">
+                  <dt class="text-slate-500 shrink-0">Credentials</dt>
+                  <dd class="font-medium text-slate-900 text-right">MSc Finance (Distinction),<br />FinOps Certified Practitioner</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 3. SKILLS SECTION                                                     -->
+    <!-- ===================================================================== -->
+    <section id="skills" class="py-16 sm:py-24 bg-slate-50/60 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="mb-10">
+          <p class="font-mono text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">02 / Capabilities Matrix</p>
+          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight">Core Skills &amp; Technical Stack</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1: Core Finance & Analytics -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-navy/5 border border-navy/10 flex items-center justify-center text-navy mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-slate-900 mb-4">Core Finance &amp; Analytics</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Financial Control &amp; GL Reconciliations</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Financial Modeling &amp; Forecasting</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Statutory Compliance (MTD VAT &amp; RTI)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Audit Readiness &amp; Internal Controls</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">FinOps &amp; Cloud Cost Allocation</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Unit Economics &amp; Chargeback/Showback</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Zero-Based Budgeting</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Process Re-engineering</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Tools & Technologies -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-teal-600/10 border border-teal-600/20 flex items-center justify-center text-teal-600 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-slate-900 mb-4">Tools &amp; Technologies</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Advanced Excel (Dynamic Arrays, Nested Formulas, XLOOKUP, Power Query, Pivot Tables)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Tableau</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Power BI</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Infor SunSystems (Query &amp; Analysis)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">TaxCalc</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Moneysoft Payroll Manager</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">SQL</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Strategic & Advisory Strengths -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-slate-900 mb-4">Strategic &amp; Advisory Strengths</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Executive Stakeholder Communication</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Cross-Border Operations (India &amp; UK)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">SOP Architecture &amp; Team Training</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Client Advisory (95% CSAT)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Analytical Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 4. PROJECTS SECTION (CORE FOCUS — MINI CASE STUDIES)                  -->
+    <!-- ===================================================================== -->
+    <section id="projects" class="py-16 sm:py-24 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <!-- Header & Category Filter Pills -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <p class="font-mono text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">03 / Impact Case Studies</p>
+            <h2 class="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight">Selected Finance &amp; Analytics Projects</h2>
+            <p class="text-sm sm:text-base text-slate-600 mt-2 max-w-2xl">
+              Real-world financial control, automation, and analytics initiatives structured to demonstrate problem framing, execution, and measurable outcomes.
+            </p>
+          </div>
+
+          <!-- Interactive Category Filters -->
+          <div id="project-filters" class="flex flex-wrap gap-2" role="tablist" aria-label="Filter case studies by category">
+            <button type="button" data-filter="all" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-navy text-white border border-navy shadow-sm">
+              All Projects
+            </button>
+            <button type="button" data-filter="Automation" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:text-slate-900">
+              Automation
+            </button>
+            <button type="button" data-filter="Financial Control" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:text-slate-900">
+              Financial Control
+            </button>
+            <button type="button" data-filter="Data Analytics" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:text-slate-900">
+              Data Analytics
+            </button>
+            <button type="button" data-filter="FinOps" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:text-slate-900">
+              FinOps
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-Column Case Study Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          <!-- CASE STUDY 1: Automation -->
+          <article data-category="Automation" class="project-card flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:border-slate-300">
+            <div class="p-6 sm:p-7 flex-1 flex flex-col">
+              <!-- Top Meta Row -->
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md bg-navy/5 text-navy border border-navy/10">Automation</span>
+                <span class="text-xs font-medium text-slate-500">Motilal Oswal Financial Services Ltd</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="font-heading font-bold text-xl text-slate-900 leading-snug mb-5">
+                Automated High-Volume Bank Reconciliation Engine
+              </h3>
+
+              <!-- Structured Case Study Blocks -->
+              <div class="space-y-4 text-sm leading-relaxed flex-1">
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Business Problem</h4>
+                  <p class="text-slate-700">Monthly reconciliation across 60+ institutional bank accounts relied on manual data matching, creating ledger-close bottlenecks and suspense balance exposure.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Tools Used</h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Advanced Excel</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Dynamic Arrays</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Nested Formulas</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Lookup Logic</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">What I Did</h4>
+                  <p class="text-slate-700">Engineered an automated reconciliation framework for high-volume institutional bank accounts, integrating dynamic lookup logic and exception flags to isolate discrepancies and resolve suspense items prior to close.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Key Insights</h4>
+                  <p class="text-slate-700">Automating early-stage exception routing surfaced timing variances days ahead of ledger closure, eliminating last-minute audit adjustments.</p>
+                </div>
+
+                <!-- Emerald Impact Callout Box -->
+                <div class="bg-emerald-50 border border-emerald-200/80 rounded-xl p-4">
+                  <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700 mb-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <span>Measured Impact</span>
+                  </div>
+                  <p class="text-emerald-950 font-medium text-sm leading-snug">
+                    Eliminated <span class="font-mono font-bold text-emerald-700">70%</span> of manual data processing, saved <span class="font-mono font-bold text-emerald-700">45 mins/day</span> across the team, achieved <span class="font-mono font-bold text-emerald-700">100%</span> pre-close resolution across 60+ accounts, and earned the <strong>‘Diamond of the Month’</strong> award (June 2022).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embedded Mini-Dashboard Visual -->
+            <div class="bg-slate-50 border-t border-slate-200 p-5 sm:px-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">Dashboard / Output: Processing Effort &amp; Resolution</span>
+                <span class="font-mono text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">-70% Effort</span>
+              </div>
+              <div class="relative h-44 w-full bg-white rounded-xl border border-slate-200/80 p-3">
+                <canvas id="chart-reconciliation" aria-label="Before vs After Reconciliation Processing Effort Chart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 2: Financial Control -->
+          <article data-category="Financial Control" class="project-card flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:border-slate-300">
+            <div class="p-6 sm:p-7 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md bg-navy/5 text-navy border border-navy/10">Financial Control</span>
+                <span class="text-xs font-medium text-slate-500">Newcastle Accountancy Ltd (UK)</span>
+              </div>
+
+              <h3 class="font-heading font-bold text-xl text-slate-900 leading-snug mb-5">
+                Multi-Client Month-End Acceleration &amp; MTD Compliance Framework
+              </h3>
+
+              <div class="space-y-4 text-sm leading-relaxed flex-1">
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Business Problem</h4>
+                  <p class="text-slate-700">Managing accounting, quarterly VAT (MTD), and monthly RTI payroll for 60+ diverse SME clients created recurring close delays and lengthy onboarding for new team members.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Tools Used</h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Microsoft Excel</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">TaxCalc</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Moneysoft Payroll Manager</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">SOP Architecture</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">What I Did</h4>
+                  <p class="text-slate-700">Streamlined month-end reporting workflows, automated recurring financial entries, managed full MTD VAT &amp; UK auto-enrolment payroll filings, and authored 10+ standardized SOPs for onboarding, reconciliations, and statutory compliance.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Key Insights</h4>
+                  <p class="text-slate-700">Standardizing pre-close reconciliation checklists directly reduced client query friction and accelerated cross-team execution speed.</p>
+                </div>
+
+                <!-- Emerald Impact Callout Box -->
+                <div class="bg-emerald-50 border border-emerald-200/80 rounded-xl p-4">
+                  <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700 mb-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <span>Measured Impact</span>
+                  </div>
+                  <p class="text-emerald-950 font-medium text-sm leading-snug">
+                    Accelerated month-end close by <span class="font-mono font-bold text-emerald-700">2 days</span>, maintained <span class="font-mono font-bold text-emerald-700">99%</span> data integrity across 60+ SME portfolios, delivered <span class="font-mono font-bold text-emerald-700">100%</span> on-time HMRC filings with zero notices, cut training time by <span class="font-mono font-bold text-emerald-700">15%</span>, and achieved <span class="font-mono font-bold text-emerald-700">95%</span> CSAT.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embedded Mini-Dashboard Visual -->
+            <div class="bg-slate-50 border-t border-slate-200 p-5 sm:px-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">Dashboard / Output: Portfolio Control Telemetry</span>
+                <span class="font-mono text-[11px] font-bold text-navy bg-white px-2 py-0.5 rounded border border-slate-200">Close: -2 Days</span>
+              </div>
+              <div class="relative h-44 w-full bg-white rounded-xl border border-slate-200/80 p-3">
+                <canvas id="chart-compliance" aria-label="Portfolio Compliance and Data Integrity KPI Telemetry Chart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 3: Data Analytics -->
+          <article data-category="Data Analytics" class="project-card flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:border-slate-300">
+            <div class="p-6 sm:p-7 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md bg-teal-600/10 text-teal-700 border border-teal-600/20">Data Analytics</span>
+                <span class="text-xs font-medium text-slate-500">Deloitte Australia Simulation (Forage)</span>
+              </div>
+
+              <h3 class="font-heading font-bold text-xl text-slate-900 leading-snug mb-5">
+                Forensic Data Analytics &amp; Executive Telemetry Dashboard
+              </h3>
+
+              <div class="space-y-4 text-sm leading-relaxed flex-1">
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Business Problem</h4>
+                  <p class="text-slate-700">Raw multi-dimensional operational and financial datasets lacked structured classification, obscuring key anomaly patterns and business risk drivers from decision-makers.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Tools Used</h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Tableau</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Microsoft Excel</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Forensic Data Classification</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">What I Did</h4>
+                  <p class="text-slate-700">Cleaned and classified raw forensic datasets in Excel, isolated operational outliers, and built an interactive executive Tableau dashboard to surface risk clusters and performance trends.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Key Insights</h4>
+                  <p class="text-slate-700">Granular category-by-time segmentation exposed concentrated operational anomalies that were hidden inside aggregate summary reports.</p>
+                </div>
+
+                <!-- Emerald Impact Callout Box -->
+                <div class="bg-emerald-50 border border-emerald-200/80 rounded-xl p-4">
+                  <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700 mb-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <span>Measured Impact</span>
+                  </div>
+                  <p class="text-emerald-950 font-medium text-sm leading-snug">
+                    Transformed unstructured telemetry into an executive-ready visual dashboard enabling rapid root-cause identification and data-backed business conclusions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embedded Mini-Dashboard Visual -->
+            <div class="bg-slate-50 border-t border-slate-200 p-5 sm:px-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">Dashboard / Output: Anomaly Cluster Distribution</span>
+                <span class="font-mono text-[11px] font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">Tableau Model</span>
+              </div>
+              <div class="relative h-44 w-full bg-white rounded-xl border border-slate-200/80 p-3">
+                <canvas id="chart-forensic" aria-label="Forensic Anomaly Classification and Variance Trend Chart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 4: FinOps -->
+          <article data-category="FinOps" class="project-card flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:border-slate-300">
+            <div class="p-6 sm:p-7 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">FinOps</span>
+                <span class="text-xs font-medium text-slate-500">FinOps Foundation Certification</span>
+              </div>
+
+              <h3 class="font-heading font-bold text-xl text-slate-900 leading-snug mb-5">
+                Multi-Cloud FinOps &amp; Unit Economics Governance Model
+              </h3>
+
+              <div class="space-y-4 text-sm leading-relaxed flex-1">
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Business Problem</h4>
+                  <p class="text-slate-700">Enterprise teams struggle to reconcile complex amortized vs. unblended multi-cloud billing data with traditional general ledgers, creating blind spots in cloud unit economics.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Tools Used</h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">FinOps Framework</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Excel Unit Economics Modeling</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Chargeback &amp; Showback Models</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">What I Did</h4>
+                  <p class="text-slate-700">Structured a cloud financial governance methodology reconciling amortized vs. unblended multi-cloud billing streams and mapping cloud architecture spend into enterprise accounting cost centers via chargeback/showback models.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Key Insights</h4>
+                  <p class="text-slate-700">Aligning cloud billing telemetry with accrual-based financial controls bridges engineering usage and finance accountability.</p>
+                </div>
+
+                <!-- Emerald Impact Callout Box -->
+                <div class="bg-emerald-50 border border-emerald-200/80 rounded-xl p-4">
+                  <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700 mb-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <span>Measured Impact</span>
+                  </div>
+                  <p class="text-emerald-950 font-medium text-sm leading-snug">
+                    Establishes transparent departmental cost allocation, accurate unit-cost visibility, and disciplined cloud margin governance across enterprise cost centers.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embedded Mini-Dashboard Visual -->
+            <div class="bg-slate-50 border-t border-slate-200 p-5 sm:px-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">Dashboard / Output: Amortized vs. Unblended Showback</span>
+                <span class="font-mono text-[11px] font-bold text-navy bg-white px-2 py-0.5 rounded border border-slate-200">Cost Allocation</span>
+              </div>
+              <div class="relative h-44 w-full bg-white rounded-xl border border-slate-200/80 p-3">
+                <canvas id="chart-finops" aria-label="Multi-Cloud Amortized vs Unblended Departmental Showback Chart"></canvas>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 5. EXPERIENCE SECTION (VERTICAL TIMELINE)                             -->
+    <!-- ===================================================================== -->
+    <section id="experience" class="py-16 sm:py-24 bg-slate-50/60 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="mb-12">
+          <p class="font-mono text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">04 / Career Trajectory</p>
+          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight">Professional Experience</h2>
+        </div>
+
+        <div class="relative space-y-8 before:hidden sm:before:block before:absolute before:left-[15px] before:top-3 before:bottom-3 before:w-px before:bg-slate-200">
+
+          <!-- Role 1: Newcastle Accountancy Ltd -->
+          <div class="relative sm:pl-12">
+            <div class="hidden sm:flex absolute left-0 top-1.5 w-8 h-8 rounded-full bg-white border-2 border-navy items-center justify-center shadow-sm">
+              <div class="w-2.5 h-2.5 rounded-full bg-navy"></div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-card hover:shadow-card-hover transition-shadow">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-4 pb-4 border-b border-slate-100">
+                <div>
+                  <h3 class="font-heading font-bold text-lg sm:text-xl text-slate-900">Assistant Accountant</h3>
+                  <p class="text-sm sm:text-base font-medium text-navy mt-0.5">Newcastle Accountancy Ltd <span class="text-slate-400 font-normal">•</span> <span class="text-slate-600 font-normal">Newcastle, UK</span></p>
+                </div>
+                <span class="inline-flex self-start font-mono text-xs font-medium px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 shrink-0">
+                  Nov 2025 – Jun 2026
+                </span>
+              </div>
+              <ul class="space-y-2.5 text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Oversaw day-to-day ledger accuracy for <strong class="text-slate-900">60+ SME clients</strong> across diverse sectors, sustaining a <strong class="font-mono text-emerald-700">99%</strong> data integrity standard.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Accelerated month-end closing cycles by <strong class="font-mono text-emerald-700">2 days</strong> via streamlined reporting workflows and automated recurring entries.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Delivered <strong class="font-mono text-emerald-700">100%</strong> on-time quarterly HMRC MTD VAT filings (TaxCalc) and monthly RTI/auto-enrolment payroll (Moneysoft) with zero compliance notices.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Resolved <strong class="text-slate-900">20+ complex accounting, tax, and payroll queries weekly</strong> (<strong class="font-mono text-emerald-700">95%</strong> client satisfaction) and authored <strong class="text-slate-900">10+ SOPs</strong> that cut new-hire training time by <strong class="font-mono text-emerald-700">15%</strong>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 2: Motilal Oswal Financial Services Ltd -->
+          <div class="relative sm:pl-12">
+            <div class="hidden sm:flex absolute left-0 top-1.5 w-8 h-8 rounded-full bg-white border-2 border-teal-600 items-center justify-center shadow-sm">
+              <div class="w-2.5 h-2.5 rounded-full bg-teal-600"></div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-card hover:shadow-card-hover transition-shadow">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-4 pb-4 border-b border-slate-100">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2.5">
+                    <h3 class="font-heading font-bold text-lg sm:text-xl text-slate-900">Accounts Executive</h3>
+                    <span class="font-mono text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Diamond of the Month</span>
+                  </div>
+                  <p class="text-sm sm:text-base font-medium text-navy mt-0.5">Motilal Oswal Financial Services Ltd <span class="text-slate-400 font-normal">•</span> <span class="text-slate-600 font-normal">Mumbai, India</span></p>
+                </div>
+                <span class="inline-flex self-start font-mono text-xs font-medium px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 shrink-0">
+                  Jun 2021 – Dec 2022
+                </span>
+              </div>
+              <ul class="space-y-2.5 text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Spearheaded Excel bank reconciliation automation (nested formulas, lookup logic, dynamic arrays), cutting manual processing by <strong class="font-mono text-emerald-700">70%</strong> and saving <strong class="font-mono text-emerald-700">45 minutes daily</strong> (Awarded <em>Diamond of the Month</em>, June 2022).</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Reconciled <strong class="text-slate-900">60+ institutional bank accounts monthly</strong>, resolving <strong class="font-mono text-emerald-700">100%</strong> of discrepancies and suspense balances prior to ledger closure.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Facilitated <strong class="text-slate-900">5+ internal and external audits</strong> with <strong class="font-mono text-emerald-700">100%</strong> regulatory compliance and built <strong class="text-slate-900">3+ automated workflows</strong> boosting departmental reporting speed by <strong class="font-mono text-emerald-700">15%</strong>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 3: St. Thomas Catholic Church (Non-Profit) -->
+          <div class="relative sm:pl-12">
+            <div class="hidden sm:flex absolute left-0 top-1.5 w-8 h-8 rounded-full bg-white border-2 border-slate-300 items-center justify-center shadow-sm">
+              <div class="w-2.5 h-2.5 rounded-full bg-slate-400"></div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-card hover:shadow-card-hover transition-shadow">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-4 pb-4 border-b border-slate-100">
+                <div>
+                  <h3 class="font-heading font-bold text-lg sm:text-xl text-slate-900">Treasurer</h3>
+                  <p class="text-sm sm:text-base font-medium text-navy mt-0.5">St. Thomas Catholic Church (Non-Profit) <span class="text-slate-400 font-normal">•</span> <span class="text-slate-600 font-normal">Vasai, India</span></p>
+                </div>
+                <span class="inline-flex self-start font-mono text-xs font-medium px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 shrink-0">
+                  Jun 2018 – Jun 2021
+                </span>
+              </div>
+              <ul class="space-y-2.5 text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Governed full-cycle Accounts Payable with dual-authorization controls, achieving <strong class="font-mono text-emerald-700">100%</strong> on-time vendor settlement.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Managed community operational and charitable funds with <strong class="text-slate-900">zero ledger discrepancies</strong> across <strong class="font-mono text-navy">3 consecutive fiscal years</strong>.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0"></span>
+                  <span>Designed annual zero-based budgets and presented quarterly budget-vs-actual financial reports to the General Body.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 6. CREDENTIALS, EDUCATION & AWARDS SECTION                            -->
+    <!-- ===================================================================== -->
+    <section id="credentials" class="py-16 sm:py-24 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="mb-10">
+          <p class="font-mono text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">05 / Academic &amp; Professional Pedigree</p>
+          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight">Education, Certifications &amp; Awards</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          <!-- Column 1: Education -->
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col">
+            <div class="flex items-center gap-2.5 mb-5 pb-3 border-b border-slate-200">
+              <svg class="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              </svg>
+              <h3 class="font-heading font-bold text-base text-slate-900">Education</h3>
+            </div>
+            <div class="space-y-5 text-sm">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <h4 class="font-semibold text-slate-900">MSc Finance</h4>
+                  <span class="font-mono text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Distinction</span>
+                </div>
+                <p class="text-slate-600 mt-0.5">Northumbria University, UK</p>
+                <p class="text-xs text-slate-500 mt-1">Earned ‘Best CFO’ Award in competitive postgraduate business simulation.</p>
+              </div>
+              <div class="pt-4 border-t border-slate-200/80">
+                <div class="flex items-center justify-between gap-2">
+                  <h4 class="font-semibold text-slate-900">Masters in Finance</h4>
+                  <span class="font-mono text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Distinction</span>
+                </div>
+                <p class="text-slate-600 mt-0.5">Mumbai University, India</p>
+                <p class="text-xs text-slate-500 mt-1">Financial forecasting, valuation, M&amp;A, and performance analysis.</p>
+              </div>
+              <div class="pt-4 border-t border-slate-200/80">
+                <div class="flex items-center justify-between gap-2">
+                  <h4 class="font-semibold text-slate-900">B.Com (Accounting &amp; Auditing)</h4>
+                  <span class="font-mono text-[11px] font-semibold px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200">1st Class</span>
+                </div>
+                <p class="text-slate-600 mt-0.5">St. Gonsalo Garcia College of Arts &amp; Commerce, India</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Certifications -->
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col">
+            <div class="flex items-center gap-2.5 mb-5 pb-3 border-b border-slate-200">
+              <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              <h3 class="font-heading font-bold text-base text-slate-900">Certifications</h3>
+            </div>
+            <div class="space-y-5 text-sm">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <h4 class="font-semibold text-slate-900">FinOps Certified Practitioner</h4>
+                  <span class="font-mono text-[11px] text-slate-500 shrink-0">Oct 2026</span>
+                </div>
+                <p class="text-navy font-medium text-xs mt-0.5">FinOps Foundation (Linux Foundation Project)</p>
+                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                  Cloud cost allocation, unit economics modeling, reconciling amortized vs. unblended multi-cloud billing data, and chargeback/showback governance models.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-200/80">
+                <div class="flex items-center justify-between gap-2">
+                  <h4 class="font-semibold text-slate-900">Deloitte Australia Data Analytics &amp; Forensic Technology</h4>
+                  <span class="font-mono text-[11px] text-slate-500 shrink-0">Jul 2025</span>
+                </div>
+                <p class="text-navy font-medium text-xs mt-0.5">Forage Job Simulation</p>
+                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                  Built interactive Tableau executive dashboards and applied Excel forensic data classification to isolate anomalies and draw business conclusions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Awards & Achievements -->
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col">
+            <div class="flex items-center gap-2.5 mb-5 pb-3 border-b border-slate-200">
+              <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+              <h3 class="font-heading font-bold text-base text-slate-900">Awards &amp; Recognition</h3>
+            </div>
+            <div class="space-y-5 text-sm">
+              <div class="bg-white border border-slate-200 rounded-xl p-4">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h4 class="font-semibold text-slate-900">Diamond of the Month</h4>
+                  <span class="font-mono text-[11px] font-semibold text-emerald-700">Jun 2022</span>
+                </div>
+                <p class="text-xs font-medium text-navy mb-1.5">Motilal Oswal Financial Services Ltd</p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Recognized for leading reconciliation automation across 5 key institutional bank accounts and delivering standout performance during Annual Report finalization.
+                </p>
+              </div>
+
+              <div class="bg-white border border-slate-200 rounded-xl p-4">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h4 class="font-semibold text-slate-900">Best CFO Award</h4>
+                  <span class="font-mono text-[11px] font-semibold text-navy">MSc Finance</span>
+                </div>
+                <p class="text-xs font-medium text-navy mb-1.5">Northumbria University, UK</p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Awarded top financial leadership distinction in a competitive postgraduate corporate business simulation for strategic capital allocation and financial analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 7. FINAL CLOSING STATEMENT & CONTACT SECTION                          -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="py-16 sm:py-24 bg-slate-50/40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+
+        <!-- Prominent Executive Closing Banner -->
+        <div class="relative overflow-hidden bg-navy rounded-3xl p-8 sm:p-12 lg:p-14 text-white mb-14 shadow-lg">
+          <!-- Subtle decorative ring -->
+          <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-white/[0.04] pointer-events-none"></div>
+          <div class="absolute -left-16 -bottom-24 w-64 h-64 rounded-full bg-teal-400/[0.06] pointer-events-none"></div>
+
+          <div class="relative max-w-4xl">
+            <p class="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-4">Executive Philosophy</p>
+            <blockquote class="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-white">
+              “I don’t just reconcile numbers. I engineer automated financial controls and turn complex data into audit-ready business decisions.”
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Contact Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div>
+            <p class="font-mono text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">06 / Direct Inquiries</p>
+            <h2 class="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight">Let’s Connect</h2>
+            <p class="text-sm sm:text-base text-slate-600 mt-2 max-w-xl">
+              Open to Financial Analyst, FP&amp;A, Financial Control, and FinOps opportunities in Mumbai and internationally.
+            </p>
+          </div>
+          <a href="mailto:blaisethomas19@gmail.com?subject=Financial%20Analyst%20Opportunity%20%E2%80%94%20Blaise%20Thomas" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-navy hover:bg-navy-light text-white font-medium text-sm sm:text-base transition-colors shadow-sm shrink-0">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Get in Touch</span>
+          </a>
+        </div>
+
+        <!-- 3-Column Contact Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <!-- Direct Email Card -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-navy/5 text-navy flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-1">Direct Email</p>
+              <p class="font-medium text-slate-900 text-sm sm:text-base break-all mb-4">blaisethomas19@gmail.com</p>
+            </div>
+            <div class="flex items-center gap-2 pt-3 border-t border-slate-100">
+              <button id="copy-email-btn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-medium transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span id="copy-btn-label">Copy Email</span>
+              </button>
+              <a href="mailto:blaisethomas19@gmail.com" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-navy hover:bg-navy/5 text-xs font-semibold transition-colors">
+                <span>Send Email</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-navy/5 text-navy flex items-center justify-center mb-4">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-1">LinkedIn Profile</p>
+              <p class="font-medium text-slate-900 text-sm sm:text-base mb-4">Blaise Thomas</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100">
+              <a href="https://www.linkedin.com/in/blaise-thomas-0586771bb/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-navy hover:text-teal-600 transition-colors">
+                <span>View LinkedIn Profile</span>
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Phone & Location Card -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-1">Phone &amp; Location</p>
+              <p class="font-mono font-semibold text-slate-900 text-sm sm:text-base">+91 96378 23274</p>
+              <p class="text-sm text-slate-600 mt-1 mb-3">Mumbai, India (Open to relocate)</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100">
+              <a href="tel:+919637823274" class="inline-flex items-center gap-1.5 text-xs font-semibold text-navy hover:text-teal-600 transition-colors">
+                <span>Call Directly</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER                                                                -->
+  <!-- ===================================================================== -->
+  <footer class="bg-white border-t border-slate-200 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500">
+      <p>&copy; 2026 Blaise Thomas. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
+        <a href="#projects" class="hover:text-slate-900 transition-colors">Case Studies</a>
+        <a href="#experience" class="hover:text-slate-900 transition-colors">Experience</a>
+        <a href="https://www.linkedin.com/in/blaise-thomas-0586771bb/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVITY & CHART.JS INITIALIZATION                               -->
+  <!-- ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // -------------------------------------------------------------------
+      // 1. Mobile Navigation Menu Toggle
+      // -------------------------------------------------------------------
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      const toggleMobileMenu = (forceClose = false) => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (forceClose || !isHidden) {
+          mobileMenu.classList.add('hidden');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => toggleMobileMenu());
+      }
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener('click', () => toggleMobileMenu(true));
+      });
+
+      // -------------------------------------------------------------------
+      // 2. Scroll Reveal Animations (IntersectionObserver)
+      // -------------------------------------------------------------------
+      const revealElements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+        );
+        revealElements.forEach((el) => observer.observe(el));
+      } else {
+        revealElements.forEach((el) => el.classList.add('visible'));
+      }
+
+      // -------------------------------------------------------------------
+      // 3. Case Study Category Filter Pills
+      // -------------------------------------------------------------------
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const selected = btn.getAttribute('data-filter');
+
+          // Update active button styles
+          filterBtns.forEach((b) => {
+            b.classList.remove('bg-navy', 'text-white', 'border-navy', 'shadow-sm');
+            b.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+          });
+          btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+          btn.classList.add('bg-navy', 'text-white', 'border-navy', 'shadow-sm');
+
+          // Filter cards cleanly
+          projectCards.forEach((card) => {
+            const category = card.getAttribute('data-category');
+            if (selected === 'all' || category === selected) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // -------------------------------------------------------------------
+      // 4. One-Click Email Copy with Toast Notification
+      // -------------------------------------------------------------------
+      const copyBtn = document.getElementById('copy-email-btn');
+      const copyBtnLabel = document.getElementById('copy-btn-label');
+      const toast = document.getElementById('toast');
+      let toastTimeout;
+
+      const showToast = (message) => {
+        const msgEl = document.getElementById('toast-message');
+        if (msgEl) msgEl.textContent = message;
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 2600);
+      };
+
+      const copyToClipboard = (text) => {
+        try {
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+          return true;
+        } catch (err) {
+          return false;
+        }
+      };
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          const copied = copyToClipboard('blaisethomas19@gmail.com');
+          if (copied) {
+            copyBtnLabel.textContent = 'Copied!';
+            showToast('Email copied: blaisethomas19@gmail.com');
+            setTimeout(() => {
+              copyBtnLabel.textContent = 'Copy Email';
+            }, 2200);
+          }
+        });
+      }
+
+      // -------------------------------------------------------------------
+      // 5. Embedded Consulting-Style Chart.js Mini-Dashboards
+      // -------------------------------------------------------------------
+      try {
+        if (typeof Chart !== 'undefined') {
+          Chart.defaults.font.family = '"Inter", sans-serif';
+          Chart.defaults.color = '#64748B';
+
+          // Common minimal tooltip styling
+          const tooltipStyle = {
+            backgroundColor: '#0F2942',
+            titleColor: '#FFFFFF',
+            bodyColor: '#E2E8F0',
+            padding: 10,
+            cornerRadius: 8,
+            displayColors: true,
+          };
+
+          // CHART 1: Automated Bank Reconciliation Engine (Before vs After)
+          const ctx1 = document.getElementById('chart-reconciliation');
+          if (ctx1) {
+            new Chart(ctx1, {
+              type: 'bar',
+              data: {
+                labels: ['Manual Effort (%)', 'Pre-Close Resolution (%)'],
+                datasets: [
+                  {
+                    label: 'Before Automation',
+                    data: [100, 82],
+                    backgroundColor: '#CBD5E1',
+                    borderRadius: 6,
+                    barPercentage: 0.65,
+                    categoryPercentage: 0.6,
+                  },
+                  {
+                    label: 'After Automation',
+                    data: [30, 100],
+                    backgroundColor: '#059669',
+                    borderRadius: 6,
+                    barPercentage: 0.65,
+                    categoryPercentage: 0.6,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                    align: 'end',
+                    labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, font: { size: 11 } },
+                  },
+                  tooltip: tooltipStyle,
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: 110,
+                    ticks: {
+                      stepSize: 25,
+                      callback: (v) => (v <= 100 ? v + '%' : ''),
+                      font: { family: '"JetBrains Mono", monospace', size: 10 },
+                    },
+                    grid: { color: '#F1F5F9' },
+                    border: { display: false },
+                  },
+                  x: {
+                    grid: { display: false },
+                    border: { display: false },
+                    ticks: { font: { size: 11, weight: '500' } },
+                  },
+                },
+              },
+            });
+          }
+
+          // CHART 2: Multi-Client Month-End & MTD Compliance Telemetry
+          const ctx2 = document.getElementById('chart-compliance');
+          if (ctx2) {
+            new Chart(ctx2, {
+              type: 'bar',
+              data: {
+                labels: ['HMRC Compliance', 'Data Integrity', 'Client CSAT'],
+                datasets: [
+                  {
+                    label: 'Performance (%)',
+                    data: [100, 99, 95],
+                    backgroundColor: ['#0F2942', '#0D9488', '#059669'],
+                    borderRadius: 6,
+                    barThickness: 18,
+                  },
+                ],
+              },
+              options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { display: false },
+                  tooltip: {
+                    ...tooltipStyle,
+                    callbacks: {
+                      label: (ctx) => ` ${ctx.parsed.x}% Achieved`,
+                    },
+                  },
+                },
+                scales: {
+                  x: {
+                    min: 80,
+                    max: 100,
+                    ticks: {
+                      stepSize: 5,
+                      callback: (v) => v + '%',
+                      font: { family: '"JetBrains Mono", monospace', size: 10 },
+                    },
+                    grid: { color: '#F1F5F9' },
+                    border: { display: false },
+                  },
+                  y: {
+                    grid: { display: false },
+                    border: { display: false },
+                    ticks: { font: { size: 11, weight: '500' }, color: '#334155' },
+                  },
+                },
+              },
+            });
+          }
+
+          // CHART 3: Forensic Data Analytics & Anomaly Distribution
+          const ctx3 = document.getElementById('chart-forensic');
+          if (ctx3) {
+            new Chart(ctx3, {
+              type: 'bar',
+              data: {
+                labels: ['Seg A', 'Seg B', 'Seg C', 'Seg D', 'Seg E'],
+                datasets: [
+                  {
+                    type: 'bar',
+                    label: 'Flagged Outliers',
+                    data: [4, 18, 7, 24, 6],
+                    backgroundColor: ['#CBD5E1', '#0D9488', '#CBD5E1', '#0F2942', '#CBD5E1'],
+                    borderRadius: 5,
+                    barPercentage: 0.55,
+                  },
+                  {
+                    type: 'line',
+                    label: 'Risk Threshold',
+                    data: [10, 10, 10, 10, 10],
+                    borderColor: '#059669',
+                    borderDash: [4, 4],
+                    borderWidth: 1.5,
+                    pointRadius: 0,
+                    fill: false,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                    align: 'end',
+                    labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, font: { size: 11 } },
+                  },
+                  tooltip: tooltipStyle,
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: 30,
+                    ticks: {
+                      stepSize: 10,
+                      font: { family: '"JetBrains Mono", monospace', size: 10 },
+                    },
+                    grid: { color: '#F1F5F9' },
+                    border: { display: false },
+                  },
+                  x: {
+                    grid: { display: false },
+                    border: { display: false },
+                    ticks: { font: { size: 11 } },
+                  },
+                },
+              },
+            });
+          }
+
+          // CHART 4: Multi-Cloud FinOps Allocation (Amortized vs Unblended Showback)
+          const ctx4 = document.getElementById('chart-finops');
+          if (ctx4) {
+            new Chart(ctx4, {
+              type: 'bar',
+              data: {
+                labels: ['Eng', 'Data', 'Finance', 'Ops'],
+                datasets: [
+                  {
+                    label: 'Unblended ($k)',
+                    data: [48, 36, 18, 22],
+                    backgroundColor: '#94A3B8',
+                    borderRadius: 5,
+                    barPercentage: 0.7,
+                    categoryPercentage: 0.65,
+                  },
+                  {
+                    label: 'Amortized ($k)',
+                    data: [42, 31, 16, 19],
+                    backgroundColor: '#0F2942',
+                    borderRadius: 5,
+                    barPercentage: 0.7,
+                    categoryPercentage: 0.65,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                    align: 'end',
+                    labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, font: { size: 11 } },
+                  },
+                  tooltip: tooltipStyle,
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: 60,
+                    ticks: {
+                      stepSize: 20,
+                      callback: (v) => '$' + v + 'k',
+                      font: { family: '"JetBrains Mono", monospace', size: 10 },
+                    },
+                    grid: { color: '#F1F5F9' },
+                    border: { display: false },
+                  },
+                  x: {
+                    grid: { display: false },
+                    border: { display: false },
+                    ticks: { font: { size: 11, weight: '500' } },
+                  },
+                },
+              },
+            });
+          }
+        }
+      } catch (chartError) {
+        console.error('Chart rendering error:', chartError);
+      }
+    });
+  </script>
+</body>
+</html>
